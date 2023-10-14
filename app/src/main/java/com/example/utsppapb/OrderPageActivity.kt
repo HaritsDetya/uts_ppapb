@@ -27,14 +27,6 @@ class OrderPageActivity : AppCompatActivity() {
         binding = OrderPageBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        val bioskop = intent.getStringExtra(EXTRA_BIOSKOP)
-        val seat = intent.getStringExtra(EXTRA_SEAT)
-        val pay = intent.getStringExtra(EXTRA_PAY)
-        val bank = intent.getStringExtra(EXTRA_BANK)
-        val prize = intent.getIntExtra(EXTRA_PRIZE, 0)
-        val addedPrize = intent.getIntExtra(EXTRA_ADDED_PRIZE, 0)
-        val time = intent.getStringExtra(EXTRA_TIME)
-        val title = intent.getStringExtra(EXTRA_TITLE)
         val name = intent.getStringExtra(EXTRA_NAME)
 
         val mainImageView = findViewById<ImageView>(R.id.image_movie)
@@ -43,18 +35,7 @@ class OrderPageActivity : AppCompatActivity() {
             mainImageView.setImageResource(img)
         }
 
-        val finPrize = prize + addedPrize
         with(binding){
-            titleMovie.text = title
-            bioskopMovie.text = bioskop
-            tanggalWaktu.text = time
-            seatMovie.text = seat
-            paymentMethod.text = pay + "($bank)"
-            jenisSeatMovie.text = seat + " Seat"
-            prizeAccept.text = "Rp. " + prize
-            convenienceFee.text = "Rp. " +  addedPrize
-            actualPrize.text = "Rp. " + finPrize
-
             backButton.setOnClickListener{
                 val intentOrderPageActivity =
                     Intent(this@OrderPageActivity, HomePageActivity::class.java)
@@ -63,6 +44,31 @@ class OrderPageActivity : AppCompatActivity() {
                 intentOrderPageActivity.putExtra(EXTRA_IMG, img)
                 startActivity(intentOrderPageActivity)
             }
+
+            val bioskop = intent.getStringExtra(EXTRA_BIOSKOP)
+            val seat = intent.getStringExtra(EXTRA_SEAT)
+            val pay = intent.getStringExtra(EXTRA_PAY)
+            val bank = intent.getStringExtra(EXTRA_BANK)
+            val prize = intent.getIntExtra(EXTRA_PRIZE, 0)
+            val addedPrize = intent.getIntExtra(EXTRA_ADDED_PRIZE, 0)
+            val time = intent.getStringExtra(EXTRA_TIME)
+            val title = intent.getStringExtra(EXTRA_TITLE)
+
+            val finPrize = prize + addedPrize
+
+            titleMovie.text = title
+            bioskopMovie.text = bioskop
+            tanggalWaktu.text = time
+            seatMovie.text = seat
+            if (pay == "Bank"){
+                paymentMethod.text = pay + "($bank)"
+            } else {
+                paymentMethod.text = pay
+            }
+            jenisSeatMovie.text = seat + " Seat"
+            prizeAccept.text = "Rp. " + prize
+            convenienceFee.text = "Rp. " +  addedPrize
+            actualPrize.text = "Rp. " + finPrize
         }
         val orderNumb = findViewById<TextView>(R.id.order_number)
         val randomLength = Random().nextInt(4) + 1
@@ -70,7 +76,7 @@ class OrderPageActivity : AppCompatActivity() {
         orderNumb.text = randomNumber.toString()
     }
     private fun generateRandomNumber(length: Int): Int {
-        require(length > 0) { "Length must be greater than 0"}
+        require(length > 0) {}
 
         val minValue = 10.0.pow(length - 1).toInt()
         val maxValue = 10.0.pow(length).toInt()
@@ -78,4 +84,5 @@ class OrderPageActivity : AppCompatActivity() {
         val random = Random(System.currentTimeMillis())
         return random.nextInt(maxValue - minValue) + minValue
     }
+
 }

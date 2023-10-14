@@ -13,6 +13,18 @@
         android:theme="@style/Theme.UTSPPAPB"
         tools:targetApi="31">
         <activity
+            android:name=".SplashPageActivity"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".LoginPageActivity"
+            android:exported="false" />
+        <activity
             android:name=".DetailPageKoeNoKatachiActivity"
             android:exported="false" />
         <activity
@@ -20,9 +32,6 @@
             android:exported="false" />
         <activity
             android:name=".DetailPageInsideOutActivity"
-            android:exported="false" />
-        <activity
-            android:name=".LayoutToolbarActivity"
             android:exported="false" />
         <activity
             android:name=".OrderPageActivity"
@@ -36,17 +45,6 @@
         <activity
             android:name=".HomePageActivity"
             android:exported="false" />
-        <activity
-            android:name=".MainActivity"
-            android:exported="false" />
-        <activity
-            android:name=".LoginPageActivity"
-            android:exported="true">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
-        </activity>
 
         <meta-data
             android:name="preloaded_fonts"

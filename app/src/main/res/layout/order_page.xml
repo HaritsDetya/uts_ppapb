@@ -49,7 +49,7 @@
                 android:layout_marginLeft="10dp"
                 android:orientation="vertical">
                 <TextView
-                    android:id="@+id/title_movie"
+                    android:id="@+id/titleMovie"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginBottom="10dp"
@@ -57,7 +57,7 @@
                     android:textSize="22dp"
                     android:textStyle="bold"/>
                 <TextView
-                    android:id="@+id/bioskop_movie"
+                    android:id="@+id/bioskopMovie"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginBottom="5dp"
@@ -65,7 +65,7 @@
                     android:textSize="18dp"
                     android:textStyle="bold"/>
                 <TextView
-                    android:id="@+id/tanggal_waktu"
+                    android:id="@+id/tanggalWaktu"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"/>
             </LinearLayout>
@@ -99,7 +99,7 @@
                 android:text="Seat"
                 android:textSize="16dp"/>
             <TextView
-                android:id="@+id/seat_movie"
+                android:id="@+id/seatMovie"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="15dp"
@@ -111,14 +111,14 @@
                 android:text="Payment Method"
                 android:textSize="16dp"/>
             <TextView
-                android:id="@+id/payment_method"
+                android:id="@+id/paymentMethod"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="15dp"
                 android:textStyle="bold"
                 android:textSize="18dp"/>
             <TextView
-                android:id="@+id/jenis_seat_movie"
+                android:id="@+id/jenisSeatMovie"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:textSize="16dp"/>
@@ -135,7 +135,7 @@
                 android:text="Convenience Fee"
                 android:textSize="16dp"/>
             <TextView
-                android:id="@+id/convenience_fee"
+                android:id="@+id/convenienceFee"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="15dp"
@@ -152,7 +152,7 @@
                 android:text="Actual Prize"
                 android:textSize="16dp"/>
             <TextView
-                android:id="@+id/actual_prize"
+                android:id="@+id/actualPrize"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:textStyle="bold"

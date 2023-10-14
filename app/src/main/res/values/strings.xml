@@ -24,4 +24,33 @@
         menjadi korban perundungan dan pindah ke sekolah lain. Beberapa tahun kemudian,
         mantan pelaku perundungan merasa tersiksa oleh perilakunya dan berusaha untuk memperbaiki
         kesalahannya.</string>
+
+    <string-array name="itemBioskop">
+        <item>Sleman City Hall XXI</item>
+        <item>Lippo Plaza Cinepolis</item>
+        <item>Empire XXI Gejayan</item>
+        <item>Ambarukmo XXI</item>
+        <item>CGV Pakuwon Mall</item>
+    </string-array>
+
+    <string-array name="itemSeat">
+        <item>Regular</item>
+        <item>Premium</item>
+        <item>Exclusive</item>
+    </string-array>
+
+    <string-array name="itemPay">
+        <item>Bank</item>
+        <item>Dana</item>
+        <item>Ovo</item>
+        <item>Gopay</item>
+    </string-array>
+
+    <string-array name="itemBank">
+        <item>Mandiri</item>
+        <item>BCA</item>
+        <item>BNI</item>
+        <item>BRI</item>
+        <item>BSI</item>
+    </string-array>
 </resources>

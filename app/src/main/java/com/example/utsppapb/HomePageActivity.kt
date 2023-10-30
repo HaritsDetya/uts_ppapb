@@ -3,8 +3,11 @@ package com.example.utsppapb
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import androidx.fragment.app.Fragment
 import com.example.utsppapb.LoginPageActivity.Companion.EXTRA_NAME
 import com.example.utsppapb.databinding.HomePageBinding
+import com.google.android.material.bottomnavigation.BottomNavigationView
+import com.google.android.material.navigation.NavigationView
 
 class HomePageActivity : AppCompatActivity() {
     private lateinit var binding: HomePageBinding
@@ -18,6 +21,10 @@ class HomePageActivity : AppCompatActivity() {
         binding = HomePageBinding.inflate(layoutInflater)
         setContentView(binding.root)
         val name = intent.getStringExtra(EXTRA_NAME)
+        val bottomNav = binding.bottomNav
+        bottomNav.selectedItemId = R.id.home
+
+
         with(binding){
             username.text = "$name"
             zootopia.setOnClickListener {
@@ -84,6 +91,29 @@ class HomePageActivity : AppCompatActivity() {
                 intentToHomePageActivity.putExtra(EXTRA_NAME, name)
                 startActivity(intentToHomePageActivity)
             }
+
+            bottomNav.setOnItemSelectedListener{
+                    when(it.itemId) {
+                        R.id.home -> {
+                            val intentHomePageActivity =
+                                Intent(this@HomePageActivity, HomePageActivity::class.java)
+                            intentHomePageActivity.putExtra(EXTRA_NAME, name)
+                            startActivity(intentHomePageActivity)
+                        }
+                        R.id.account -> {
+                            val intentToAccountPageActivity =
+                                Intent(this@HomePageActivity, AccountPageActivity::class.java)
+                            intentToAccountPageActivity.putExtra(EXTRA_NAME, name)
+                            startActivity(intentToAccountPageActivity)
+                        }
+                        R.id.logout -> {
+                            startActivity(Intent(this@HomePageActivity, LoginPageActivity::class.java))
+                        }
+                        else -> {
+                        }
+                    }
+                    true
+                }
         }
     }
 }
